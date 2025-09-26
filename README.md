@@ -43,7 +43,7 @@ echo $view->render('home'); // => HOME
 -   Unified `EngineInterface` interface
 -   Easy integration with frameworks (e.g., Annabel)
 
-## Tests
+## 🧪 Testing
 
 You can run tests with the command:
 
@@ -51,10 +51,10 @@ You can run tests with the command:
 composer test
 ```
 
-## Author
+## 👨‍💻 Author
 
 [**Kirill Kolesnikov**](https://github.com/KolesnikovKirill)
 
-## License
+## 📜 License
 
 [MIT](https://github.com/codemonster-ru/view/blob/main/LICENSE)
