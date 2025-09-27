@@ -23,17 +23,16 @@ composer require codemonster-ru/view
 
 ```php
 use Codemonster\View\View;
-use Codemonster\View\EngineInterface;
+use Codemonster\View\Locator\DefaultLocator;
+use Codemonster\View\Engines\PhpEngine; // package: codemonster-ru/view-php
 
-class DummyEngine implements EngineInterface {
-    public function render(string $view, array $data = []): string {
-        return strtoupper($view);
-    }
-}
+$locator = new DefaultLocator([__DIR__ . '/resources/views']); // can be an array of paths
+$engine  = new PhpEngine($locator, 'php'); // default extension: php
 
-$view = new View(['dummy' => new DummyEngine()], 'dummy');
+$view = new View(['php' => $engine], 'php');
 
-echo $view->render('home'); // => HOME
+echo $view->render('emails.welcome', ['user' => 'Vasya']);
+// Looks for: resources/views/emails/welcome.php
 ```
 
 ## ✨ Features
