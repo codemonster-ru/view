@@ -2,6 +2,12 @@
 
 All significant changes to this project will be documented in this file.
 
+## [2.0.0] - 2025-09-28
+
+### Changed
+
+-   Raised minimum PHP version to >= 8.2. No public API changes.
+
 ## [1.1.0] - 2025-09-27
 
 ### Added
