@@ -1,7 +1,7 @@
 <?php
+
 namespace Codemonster\View\Locator;
 
-use InvalidArgumentException;
 use RuntimeException;
 
 final class DefaultLocator implements LocatorInterface
@@ -15,7 +15,7 @@ final class DefaultLocator implements LocatorInterface
         }
 
         if ($this->paths[''] === []) {
-            throw new InvalidArgumentException('At least one base path is required.');
+            throw new \RuntimeException('At least one base path is required.');
         }
     }
 

@@ -2,6 +2,17 @@
 
 All significant changes to this project will be documented in this file.
 
+## [2.1.0] - 2025-10-14
+
+### Added
+
+-   Implemented **smart view engine detection** — `View` now automatically determines which engine to use based on template file extensions.
+    -   `.razor.php` → RazorEngine
+    -   `.php` → PhpEngine
+    -   Future engines (e.g. Twig, Mustache, SSR) are automatically supported if registered.
+-   Added `SupportsInspectionInterface` to standardize engine introspection (`getLocator()`, `getExtensions()`).
+-   Added `DefaultLocator::resolveSilently()` for non-throwing view resolution during engine detection.
+
 ## [2.0.0] - 2025-09-28
 
 ### Changed

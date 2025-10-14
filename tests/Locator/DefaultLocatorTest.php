@@ -93,7 +93,7 @@ final class DefaultLocatorTest extends TestCase
 
     public function testBlocksPathTraversal(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
 
         $locator = new DefaultLocator([$this->global]);
         $locator->resolve('../secret', 'php');
@@ -101,7 +101,7 @@ final class DefaultLocatorTest extends TestCase
 
     public function testThrowsIfViewNotFound(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
 
         $locator = new DefaultLocator([$this->global]);
         $locator->resolve('missing.view', 'php');
@@ -114,7 +114,7 @@ final class DefaultLocatorTest extends TestCase
 
         $this->assertFileExists($file);
 
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\RuntimeException::class);
 
         new DefaultLocator([$this->fx . '/nope', $this->fx . '/also-nope']);
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Codemonster\View\Locator;
 
 interface LocatorInterface

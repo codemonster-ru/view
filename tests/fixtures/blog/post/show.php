@@ -1,1 +1,1 @@
-<?php echo "blog post show"; ?>
+<?php echo "blog post show";

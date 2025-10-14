@@ -27,7 +27,7 @@ class ViewTest extends TestCase
 
     public function testThrowsWhenEngineNotFound()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\RuntimeException::class);
 
         $view = new View([], 'php');
         $view->render('home');

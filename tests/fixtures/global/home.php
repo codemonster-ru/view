@@ -1,1 +1,1 @@
-<?php echo "global home"; ?>
+<?php echo "global home";
