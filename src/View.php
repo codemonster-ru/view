@@ -80,4 +80,15 @@ class View
 
         return $this->engines[$engine]->render($view, $data);
     }
+
+    public function getLocator(): ?object
+    {
+        $engine = $this->engines[$this->default] ?? null;
+
+        if ($engine && method_exists($engine, 'getLocator')) {
+            return $engine->getLocator();
+        }
+
+        return null;
+    }
 }

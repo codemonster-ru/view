@@ -31,8 +31,13 @@ $engine  = new PhpEngine($locator, 'php'); // default extension: php
 
 $view = new View(['php' => $engine], 'php');
 
+// Render template
 echo $view->render('emails.welcome', ['user' => 'Vasya']);
 // Looks for: resources/views/emails/welcome.php
+
+// 🔹 Access the locator of the default engine (added in v2.1.0)
+$defaultLocator = $view->getLocator();
+$defaultLocator->addPath(__DIR__ . '/vendor/package/views');
 ```
 
 ## ✨ Features

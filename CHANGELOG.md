@@ -2,6 +2,12 @@
 
 All significant changes to this project will be documented in this file.
 
+## [2.2.0] - 2025-10-17
+
+### Added
+
+-   Added `View::getLocator()` method to allow retrieving the locator of the default view engine.
+
 ## [2.1.0] - 2025-10-14
 
 ### Added
