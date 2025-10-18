@@ -35,9 +35,13 @@ $view = new View(['php' => $engine], 'php');
 echo $view->render('emails.welcome', ['user' => 'Vasya']);
 // Looks for: resources/views/emails/welcome.php
 
-// 🔹 Access the locator of the default engine (added in v2.1.0)
+// 🔹 Access the locator of the default engine (added in v2.2.0)
 $defaultLocator = $view->getLocator();
 $defaultLocator->addPath(__DIR__ . '/vendor/package/views');
+
+// 🧭 Register namespaced view paths (added in v2.3.0)
+$view->addNamespace('admin', __DIR__ . '/resources/views/admin');
+echo $view->render('admin::dashboard', ['user' => 'Vasya']);
 ```
 
 ## ✨ Features

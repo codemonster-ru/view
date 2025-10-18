@@ -91,4 +91,21 @@ class View
 
         return null;
     }
+
+    public function addNamespace(string $namespace, string $path): void
+    {
+        $engine = $this->engines[$this->default] ?? null;
+
+        if (!$engine || !method_exists($engine, 'getLocator')) {
+            throw new \RuntimeException('Default engine does not support locators.');
+        }
+
+        $locator = $engine->getLocator();
+
+        if (method_exists($locator, 'addPath')) {
+            $locator->addPath($path, $namespace);
+        } else {
+            throw new \RuntimeException('Locator does not support addPath method.');
+        }
+    }
 }

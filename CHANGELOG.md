@@ -2,6 +2,12 @@
 
 All significant changes to this project will be documented in this file.
 
+## [2.3.0] - 2025-10-18
+
+### Added
+
+-   Added `View::addNamespace(string $namespace, string $path)` method to register view namespaces.
+
 ## [2.2.0] - 2025-10-17
 
 ### Added
