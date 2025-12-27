@@ -2,6 +2,26 @@
 
 All significant changes to this project will be documented in this file.
 
+## [2.3.1] - 2025-12-27
+
+### Added
+
+-   Added tests for engine auto-detection and `View::addNamespace()` behavior.
+
+### Changed
+
+-   Fixed README formatting/encoding artifacts.
+-   Updated PHPUnit schema to 9.6 to match the supported version range.
+-   Standardized `declare(strict_types=1)` usage in core files.
+-   Tightened `View::getLocator()` return type to `LocatorInterface`.
+-   `View` now checks `SupportsInspectionInterface` instead of `method_exists()` for locator access.
+-   `composer test` now uses `vendor/bin/phpunit`.
+-   Aligned test namespace with PSR-4 autoloading.
+
+### Removed
+
+-   Dropped the `resolveSilently()` fallback path in `View::tryResolve()`.
+
 ## [2.3.0] - 2025-10-18
 
 ### Added

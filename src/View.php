@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Codemonster\View;
 
 use Codemonster\View\Contracts\SupportsInspectionInterface;
+use Codemonster\View\Locator\LocatorInterface;
 
 class View
 {
@@ -59,10 +62,6 @@ class View
 
     protected function tryResolve($locator, string $view, string $extension): ?string
     {
-        if (method_exists($locator, 'resolveSilently')) {
-            return $locator->resolveSilently($view, $extension);
-        }
-
         try {
             $path = $locator->resolve($view, $extension);
 
@@ -81,11 +80,11 @@ class View
         return $this->engines[$engine]->render($view, $data);
     }
 
-    public function getLocator(): ?object
+    public function getLocator(): ?LocatorInterface
     {
         $engine = $this->engines[$this->default] ?? null;
 
-        if ($engine && method_exists($engine, 'getLocator')) {
+        if ($engine instanceof SupportsInspectionInterface) {
             return $engine->getLocator();
         }
 
@@ -96,7 +95,7 @@ class View
     {
         $engine = $this->engines[$this->default] ?? null;
 
-        if (!$engine || !method_exists($engine, 'getLocator')) {
+        if (!$engine instanceof SupportsInspectionInterface) {
             throw new \RuntimeException('Default engine does not support locators.');
         }
 

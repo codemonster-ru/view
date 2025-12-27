@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Locator;
+namespace Codemonster\View\Tests\Locator;
 
 use Codemonster\View\Locator\DefaultLocator;
 use Codemonster\View\Locator\LocatorInterface;

@@ -9,17 +9,17 @@ A core for rendering views in PHP applications.
 
 The package itself doesn't contain any engines; they are included in separate packages:
 
--   [`codemonster-ru/view-php`](https://github.com/codemonster-ru/view-php) — PHP templates
--   [`codemonster-ru/view-ssr`](https://github.com/codemonster-ru/view-ssr) — SSR for Vue/React
+-   [`codemonster-ru/view-php`](https://github.com/codemonster-ru/view-php) - PHP templates
+-   [`codemonster-ru/view-ssr`](https://github.com/codemonster-ru/view-ssr) - SSR for Vue/React
 -   (future) Twig, Blade, and others
 
-## 📦 Installation
+## Installation
 
 ```bash
 composer require codemonster-ru/view
 ```
 
-## 🚀 Usage
+## Usage
 
 ```php
 use Codemonster\View\View;
@@ -35,23 +35,23 @@ $view = new View(['php' => $engine], 'php');
 echo $view->render('emails.welcome', ['user' => 'Vasya']);
 // Looks for: resources/views/emails/welcome.php
 
-// 🔹 Access the locator of the default engine (added in v2.2.0)
+// Access the locator of the default engine (added in v2.2.0)
 $defaultLocator = $view->getLocator();
 $defaultLocator->addPath(__DIR__ . '/vendor/package/views');
 
-// 🧭 Register namespaced view paths (added in v2.3.0)
+// Register namespaced view paths (added in v2.3.0)
 $view->addNamespace('admin', __DIR__ . '/resources/views/admin');
 echo $view->render('admin::dashboard', ['user' => 'Vasya']);
 ```
 
-## ✨ Features
+## Features
 
 -   Engine-agnostic core
 -   Support for multiple engines (`PhpEngine`, `SsrEngine`, `TwigEngine`, etc.)
 -   Unified `EngineInterface` interface
 -   Easy integration with frameworks (e.g., Annabel)
 
-## 🧪 Testing
+## Testing
 
 You can run tests with the command:
 
@@ -59,10 +59,10 @@ You can run tests with the command:
 composer test
 ```
 
-## 👨‍💻 Author
+## Author
 
 [**Kirill Kolesnikov**](https://github.com/KolesnikovKirill)
 
-## 📜 License
+## License
 
 [MIT](https://github.com/codemonster-ru/view/blob/main/LICENSE)
